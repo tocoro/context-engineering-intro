@@ -1,296 +1,296 @@
-# Context Engineering Template
+# コンテキストエンジニアリングテンプレート
 
-A comprehensive template for getting started with Context Engineering - the discipline of engineering context for AI coding assistants so they have the information necessary to get the job done end to end.
+AIコーディングアシスタントが最初から最後まで作業を完了するために必要な情報を提供する、コンテキストエンジニアリングの包括的なテンプレートです。
 
-> **Context Engineering is 10x better than prompt engineering and 100x better than vibe coding.**
+> **コンテキストエンジニアリングは、プロンプトエンジニアリングの10倍、感覚的コーディングの100倍優れています。**
 
-## 🚀 Quick Start
+## 🚀 クイックスタート
 
 ```bash
-# 1. Clone this template
+# 1. このテンプレートをクローン
 git clone https://github.com/coleam00/Context-Engineering-Intro.git
 cd Context-Engineering-Intro
 
-# 2. Set up your project rules (optional - template provided)
-# Edit CLAUDE.md to add your project-specific guidelines
+# 2. プロジェクトルールを設定（オプション - テンプレート提供済み）
+# CLAUDE.mdを編集してプロジェクト固有のガイドラインを追加
 
-# 3. Add examples (highly recommended)
-# Place relevant code examples in the examples/ folder
+# 3. 例を追加（強く推奨）
+# 関連するコード例をexamples/フォルダに配置
 
-# 4. Create your initial feature request
-# Edit INITIAL.md with your feature requirements
+# 4. 初期機能要求を作成
+# INITIAL.mdを編集して機能要件を記述
 
-# 5. Generate a comprehensive PRP (Product Requirements Prompt)
-# In Claude Code, run:
+# 5. 包括的なPRP（Product Requirements Prompt）を生成
+# Claude Codeで実行：
 /generate-prp INITIAL.md
 
-# 6. Execute the PRP to implement your feature
-# In Claude Code, run:
+# 6. PRPを実行して機能を実装
+# Claude Codeで実行：
 /execute-prp PRPs/your-feature-name.md
 ```
 
-## 📚 Table of Contents
+## 📚 目次
 
-- [What is Context Engineering?](#what-is-context-engineering)
-- [Template Structure](#template-structure)
-- [Step-by-Step Guide](#step-by-step-guide)
-- [Writing Effective INITIAL.md Files](#writing-effective-initialmd-files)
-- [The PRP Workflow](#the-prp-workflow)
-- [Using Examples Effectively](#using-examples-effectively)
-- [Best Practices](#best-practices)
+- [コンテキストエンジニアリングとは？](#コンテキストエンジニアリングとは)
+- [テンプレート構造](#テンプレート構造)
+- [ステップバイステップガイド](#ステップバイステップガイド)
+- [効果的なINITIAL.mdファイルの作成](#効果的なinitialmdファイルの作成)
+- [PRPワークフロー](#prpワークフロー)
+- [例の効果的な使用](#例の効果的な使用)
+- [ベストプラクティス](#ベストプラクティス)
 
-## What is Context Engineering?
+## コンテキストエンジニアリングとは？
 
-Context Engineering represents a paradigm shift from traditional prompt engineering:
+コンテキストエンジニアリングは、従来のプロンプトエンジニアリングからのパラダイムシフトを表します：
 
-### Prompt Engineering vs Context Engineering
+### プロンプトエンジニアリング vs コンテキストエンジニアリング
 
-**Prompt Engineering:**
-- Focuses on clever wording and specific phrasing
-- Limited to how you phrase a task
-- Like giving someone a sticky note
+**プロンプトエンジニアリング：**
+- 巧妙な言い回しと特定のフレーズに焦点
+- タスクの言い方に限定
+- 付箋を渡すようなもの
 
-**Context Engineering:**
-- A complete system for providing comprehensive context
-- Includes documentation, examples, rules, patterns, and validation
-- Like writing a full screenplay with all the details
+**コンテキストエンジニアリング：**
+- 包括的なコンテキストを提供する完全なシステム
+- ドキュメント、例、ルール、パターン、検証を含む
+- すべての詳細を含む完全なシナリオを書くようなもの
 
-### Why Context Engineering Matters
+### コンテキストエンジニアリングが重要な理由
 
-1. **Reduces AI Failures**: Most agent failures aren't model failures - they're context failures
-2. **Ensures Consistency**: AI follows your project patterns and conventions
-3. **Enables Complex Features**: AI can handle multi-step implementations with proper context
-4. **Self-Correcting**: Validation loops allow AI to fix its own mistakes
+1. **AIの失敗を減らす**: エージェントの失敗のほとんどはモデルの失敗ではなく、コンテキストの失敗
+2. **一貫性を確保**: AIがプロジェクトのパターンと慣例に従う
+3. **複雑な機能を可能にする**: AIが適切なコンテキストで多段階の実装を処理できる
+4. **自己修正**: 検証ループによりAIが自分の間違いを修正できる
 
-## Template Structure
+## テンプレート構造
 
 ```
 context-engineering-intro/
 ├── .claude/
 │   ├── commands/
-│   │   ├── generate-prp.md    # Generates comprehensive PRPs
-│   │   └── execute-prp.md     # Executes PRPs to implement features
-│   └── settings.local.json    # Claude Code permissions
+│   │   ├── generate-prp.md    # 包括的なPRPを生成
+│   │   └── execute-prp.md     # PRPを実行して機能を実装
+│   └── settings.local.json    # Claude Code権限
 ├── PRPs/
 │   ├── templates/
-│   │   └── prp_base.md       # Base template for PRPs
-│   └── EXAMPLE_multi_agent_prp.md  # Example of a complete PRP
-├── examples/                  # Your code examples (critical!)
-├── CLAUDE.md                 # Global rules for AI assistant
-├── INITIAL.md               # Template for feature requests
-├── INITIAL_EXAMPLE.md       # Example feature request
-└── README.md                # This file
+│   │   └── prp_base.md       # PRPのベーステンプレート
+│   └── EXAMPLE_multi_agent_prp.md  # 完全なPRPの例
+├── examples/                  # コード例（重要！）
+├── CLAUDE.md                 # AIアシスタントのグローバルルール
+├── INITIAL.md               # 機能要求のテンプレート
+├── INITIAL_EXAMPLE.md       # 機能要求の例
+└── README.md                # このファイル
 ```
 
-This template doesn't focus on RAG and tools with context engineering because I have a LOT more in store for that soon. ;)
+このテンプレートは、コンテキストエンジニアリングにおけるRAGとツールに焦点を当てていません。なぜなら、それについては近いうちにさらに多くのものを用意しているからです。;)
 
-## Step-by-Step Guide
+## ステップバイステップガイド
 
-### 1. Set Up Global Rules (CLAUDE.md)
+### 1. グローバルルールを設定（CLAUDE.md）
 
-The `CLAUDE.md` file contains project-wide rules that the AI assistant will follow in every conversation. The template includes:
+`CLAUDE.md`ファイルには、AIアシスタントがすべての会話で従うプロジェクト全体のルールが含まれています。テンプレートには以下が含まれます：
 
-- **Project awareness**: Reading planning docs, checking tasks
-- **Code structure**: File size limits, module organization
-- **Testing requirements**: Unit test patterns, coverage expectations
-- **Style conventions**: Language preferences, formatting rules
-- **Documentation standards**: Docstring formats, commenting practices
+- **プロジェクト認識**: 計画ドキュメントの読み取り、タスクの確認
+- **コード構造**: ファイルサイズ制限、モジュール構成
+- **テスト要件**: ユニットテストパターン、カバレッジ期待値
+- **スタイル慣例**: 言語設定、フォーマットルール
+- **ドキュメント標準**: ドキュメント文字列形式、コメント実践
 
-**You can use the provided template as-is or customize it for your project.**
+**提供されたテンプレートをそのまま使用するか、プロジェクト用にカスタマイズできます。**
 
-### 2. Create Your Initial Feature Request
+### 2. 初期機能要求を作成
 
-Edit `INITIAL.md` to describe what you want to build:
+`INITIAL.md`を編集して、構築したいものを記述します：
 
 ```markdown
-## FEATURE:
-[Describe what you want to build - be specific about functionality and requirements]
+## 機能:
+[構築したいものを記述 - 機能と要件について具体的に]
 
-## EXAMPLES:
-[List any example files in the examples/ folder and explain how they should be used]
+## 例:
+[examples/フォルダの例ファイルをリストアップし、使用方法を説明]
 
-## DOCUMENTATION:
-[Include links to relevant documentation, APIs, or MCP server resources]
+## ドキュメント:
+[関連するドキュメント、API、MCPサーバーリソースへのリンクを含める]
 
-## OTHER CONSIDERATIONS:
-[Mention any gotchas, specific requirements, or things AI assistants commonly miss]
+## その他の考慮事項:
+[AIアシスタントがよく見落とす落とし穴、特定の要件、または考慮すべきことを言及]
 ```
 
-**See `INITIAL_EXAMPLE.md` for a complete example.**
+**完全な例については`INITIAL_EXAMPLE.md`を参照してください。**
 
-### 3. Generate the PRP
+### 3. PRPを生成
 
-PRPs (Product Requirements Prompts) are comprehensive implementation blueprints that include:
+PRP（Product Requirements Prompts）は、以下を含む包括的な実装青写真です：
 
-- Complete context and documentation
-- Implementation steps with validation
-- Error handling patterns
-- Test requirements
+- 完全なコンテキストとドキュメント
+- 検証付きの実装ステップ
+- エラーハンドリングパターン
+- テスト要件
 
-They are similar to PRDs (Product Requirements Documents) but are crafted more specifically to instruct an AI coding assistant.
+これらはPRD（Product Requirements Documents）に似ていますが、AIコーディングアシスタントを指導するためにより具体的に作成されています。
 
-Run in Claude Code:
+Claude Codeで実行：
 ```bash
 /generate-prp INITIAL.md
 ```
 
-**Note:** The slash commands are custom commands defined in `.claude/commands/`. You can view their implementation:
-- `.claude/commands/generate-prp.md` - See how it researches and creates PRPs
-- `.claude/commands/execute-prp.md` - See how it implements features from PRPs
+**注意:** スラッシュコマンドは`.claude/commands/`で定義されたカスタムコマンドです。実装を確認できます：
+- `.claude/commands/generate-prp.md` - リサーチとPRP作成の方法を確認
+- `.claude/commands/execute-prp.md` - PRPから機能を実装する方法を確認
 
-The `$ARGUMENTS` variable in these commands receives whatever you pass after the command name (e.g., `INITIAL.md` or `PRPs/your-feature.md`).
+これらのコマンドの`$ARGUMENTS`変数は、コマンド名の後に渡すもの（例：`INITIAL.md`や`PRPs/your-feature.md`）を受け取ります。
 
-This command will:
-1. Read your feature request
-2. Research the codebase for patterns
-3. Search for relevant documentation
-4. Create a comprehensive PRP in `PRPs/your-feature-name.md`
+このコマンドは以下を実行します：
+1. 機能要求を読み取り
+2. パターンのためにコードベースをリサーチ
+3. 関連するドキュメントを検索
+4. `PRPs/your-feature-name.md`に包括的なPRPを作成
 
-### 4. Execute the PRP
+### 4. PRPを実行
 
-Once generated, execute the PRP to implement your feature:
+生成後、PRPを実行して機能を実装します：
 
 ```bash
 /execute-prp PRPs/your-feature-name.md
 ```
 
-The AI coding assistant will:
-1. Read all context from the PRP
-2. Create a detailed implementation plan
-3. Execute each step with validation
-4. Run tests and fix any issues
-5. Ensure all success criteria are met
+AIコーディングアシスタントは以下を実行します：
+1. PRPからすべてのコンテキストを読み取り
+2. 詳細な実装計画を作成
+3. 検証付きで各ステップを実行
+4. テストを実行し、問題を修正
+5. すべての成功基準が満たされていることを確認
 
-## Writing Effective INITIAL.md Files
+## 効果的なINITIAL.mdファイルの作成
 
-### Key Sections Explained
+### 主要セクションの説明
 
-**FEATURE**: Be specific and comprehensive
-- ❌ "Build a web scraper"
-- ✅ "Build an async web scraper using BeautifulSoup that extracts product data from e-commerce sites, handles rate limiting, and stores results in PostgreSQL"
+**機能**: 具体的で包括的に
+- ❌ "Webスクレイパーを構築"
+- ✅ "eコマースサイトから商品データを抽出し、レート制限を処理し、結果をPostgreSQLに保存するBeautifulSoupを使用した非同期Webスクレイパーを構築"
 
-**EXAMPLES**: Leverage the examples/ folder
-- Place relevant code patterns in `examples/`
-- Reference specific files and patterns to follow
-- Explain what aspects should be mimicked
+**例**: examples/フォルダを活用
+- 関連するコードパターンを`examples/`に配置
+- 従うべき特定のファイルとパターンを参照
+- 模倣すべき側面を説明
 
-**DOCUMENTATION**: Include all relevant resources
-- API documentation URLs
-- Library guides
-- MCP server documentation
-- Database schemas
+**ドキュメント**: 関連するすべてのリソースを含める
+- APIドキュメントURL
+- ライブラリガイド
+- MCPサーバードキュメント
+- データベーススキーマ
 
-**OTHER CONSIDERATIONS**: Capture important details
-- Authentication requirements
-- Rate limits or quotas
-- Common pitfalls
-- Performance requirements
+**その他の考慮事項**: 重要な詳細を捕捉
+- 認証要件
+- レート制限またはクォータ
+- 一般的な落とし穴
+- パフォーマンス要件
 
-## The PRP Workflow
+## PRPワークフロー
 
-### How /generate-prp Works
+### /generate-prpの動作方法
 
-The command follows this process:
+コマンドは以下のプロセスに従います：
 
-1. **Research Phase**
-   - Analyzes your codebase for patterns
-   - Searches for similar implementations
-   - Identifies conventions to follow
+1. **リサーチフェーズ**
+   - パターンのためにコードベースを分析
+   - 類似の実装を検索
+   - 従うべき慣例を特定
 
-2. **Documentation Gathering**
-   - Fetches relevant API docs
-   - Includes library documentation
-   - Adds gotchas and quirks
+2. **ドキュメント収集**
+   - 関連するAPIドキュメントを取得
+   - ライブラリドキュメントを含める
+   - 落とし穴と癖を追加
 
-3. **Blueprint Creation**
-   - Creates step-by-step implementation plan
-   - Includes validation gates
-   - Adds test requirements
+3. **青写真作成**
+   - 段階的な実装計画を作成
+   - 検証ゲートを含める
+   - テスト要件を追加
 
-4. **Quality Check**
-   - Scores confidence level (1-10)
-   - Ensures all context is included
+4. **品質チェック**
+   - 信頼度レベル（1-10）をスコア
+   - すべてのコンテキストが含まれていることを確認
 
-### How /execute-prp Works
+### /execute-prpの動作方法
 
-1. **Load Context**: Reads the entire PRP
-2. **Plan**: Creates detailed task list using TodoWrite
-3. **Execute**: Implements each component
-4. **Validate**: Runs tests and linting
-5. **Iterate**: Fixes any issues found
-6. **Complete**: Ensures all requirements met
+1. **コンテキスト読み込み**: 完全なPRPを読み取り
+2. **計画**: TodoWriteを使用して詳細なタスクリストを作成
+3. **実行**: 各コンポーネントを実装
+4. **検証**: テストとリンティングを実行
+5. **反復**: 見つかった問題を修正
+6. **完了**: すべての要件が満たされていることを確認
 
-See `PRPs/EXAMPLE_multi_agent_prp.md` for a complete example of what gets generated.
+生成されるものの完全な例については`PRPs/EXAMPLE_multi_agent_prp.md`を参照してください。
 
-## Using Examples Effectively
+## 例の効果的な使用
 
-The `examples/` folder is **critical** for success. AI coding assistants perform much better when they can see patterns to follow.
+`examples/`フォルダは成功に**重要**です。AIコーディングアシスタントは、従うべきパターンを見ることができると、はるかに優れたパフォーマンスを発揮します。
 
-### What to Include in Examples
+### 例に含めるべきもの
 
-1. **Code Structure Patterns**
-   - How you organize modules
-   - Import conventions
-   - Class/function patterns
+1. **コード構造パターン**
+   - モジュールの構成方法
+   - インポート慣例
+   - クラス/関数パターン
 
-2. **Testing Patterns**
-   - Test file structure
-   - Mocking approaches
-   - Assertion styles
+2. **テストパターン**
+   - テストファイル構造
+   - モックアプローチ
+   - アサーションスタイル
 
-3. **Integration Patterns**
-   - API client implementations
-   - Database connections
-   - Authentication flows
+3. **統合パターン**
+   - APIクライアント実装
+   - データベース接続
+   - 認証フロー
 
-4. **CLI Patterns**
-   - Argument parsing
-   - Output formatting
-   - Error handling
+4. **CLIパターン**
+   - 引数解析
+   - 出力フォーマット
+   - エラーハンドリング
 
-### Example Structure
+### 例の構造
 
 ```
 examples/
-├── README.md           # Explains what each example demonstrates
-├── cli.py             # CLI implementation pattern
-├── agent/             # Agent architecture patterns
-│   ├── agent.py      # Agent creation pattern
-│   ├── tools.py      # Tool implementation pattern
-│   └── providers.py  # Multi-provider pattern
-└── tests/            # Testing patterns
-    ├── test_agent.py # Unit test patterns
-    └── conftest.py   # Pytest configuration
+├── README.md           # 各例が何を示すかを説明
+├── cli.py             # CLI実装パターン
+├── agent/             # エージェントアーキテクチャパターン
+│   ├── agent.py      # エージェント作成パターン
+│   ├── tools.py      # ツール実装パターン
+│   └── providers.py  # マルチプロバイダーパターン
+└── tests/            # テストパターン
+    ├── test_agent.py # ユニットテストパターン
+    └── conftest.py   # Pytest設定
 ```
 
-## Best Practices
+## ベストプラクティス
 
-### 1. Be Explicit in INITIAL.md
-- Don't assume the AI knows your preferences
-- Include specific requirements and constraints
-- Reference examples liberally
+### 1. INITIAL.mdで明示的に
+- AIがあなたの好みを知っていると仮定しない
+- 特定の要件と制約を含める
+- 例を自由に参照
 
-### 2. Provide Comprehensive Examples
-- More examples = better implementations
-- Show both what to do AND what not to do
-- Include error handling patterns
+### 2. 包括的な例を提供
+- より多くの例 = より良い実装
+- 何をすべきかと何をすべきでないかの両方を示す
+- エラーハンドリングパターンを含める
 
-### 3. Use Validation Gates
-- PRPs include test commands that must pass
-- AI will iterate until all validations succeed
-- This ensures working code on first try
+### 3. 検証ゲートを使用
+- PRPには合格しなければならないテストコマンドが含まれる
+- AIはすべての検証が成功するまで反復する
+- これにより最初の試行で動作するコードが確保される
 
-### 4. Leverage Documentation
-- Include official API docs
-- Add MCP server resources
-- Reference specific documentation sections
+### 4. ドキュメントを活用
+- 公式APIドキュメントを含める
+- MCPサーバーリソースを追加
+- 特定のドキュメントセクションを参照
 
-### 5. Customize CLAUDE.md
-- Add your conventions
-- Include project-specific rules
-- Define coding standards
+### 5. CLAUDE.mdをカスタマイズ
+- あなたの慣例を追加
+- プロジェクト固有のルールを含める
+- コーディング標準を定義
 
-## Resources
+## リソース
 
-- [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
-- [Context Engineering Best Practices](https://www.philschmid.de/context-engineering)
+- [Claude Codeドキュメント](https://docs.anthropic.com/en/docs/claude-code)
+- [コンテキストエンジニアリングベストプラクティス](https://www.philschmid.de/context-engineering)

@@ -1,40 +1,40 @@
-# Execute BASE PRP
+# BASE PRPの実行
 
-Implement a feature using using the PRP file.
+PRPファイルを使用して機能を実装します。
 
-## PRP File: $ARGUMENTS
+## PRPファイル: $ARGUMENTS
 
-## Execution Process
+## 実行プロセス
 
-1. **Load PRP**
-   - Read the specified PRP file
-   - Understand all context and requirements
-   - Follow all instructions in the PRP and extend the research if needed
-   - Ensure you have all needed context to implement the PRP fully
-   - Do more web searches and codebase exploration as needed
+1. **PRPの読み込み**
+   - 指定されたPRPファイルを読み取る
+   - すべてのコンテキストと要件を理解する
+   - PRP内のすべての指示に従い、必要に応じて調査を拡張する
+   - PRPを完全に実装するために必要なすべてのコンテキストを確保する
+   - 必要に応じて、より多くのWeb検索とコードベース探索を行う
 
 2. **ULTRATHINK**
-   - Think hard before you execute the plan. Create a comprehensive plan addressing all requirements.
-   - Break down complex tasks into smaller, manageable steps using your todos tools.
-   - Use the TodoWrite tool to create and track your implementation plan.
-   - Identify implementation patterns from existing code to follow.
+   - 計画を実行する前に深く考える。すべての要件に対応する包括的な計画を作成する。
+   - 複雑なタスクを、todoツールを使用して小さな管理可能なステップに分解する。
+   - TodoWriteツールを使用して実装計画を作成し、追跡する。
+   - 既存のコードから実装パターンを特定して従う。
 
-3. **Execute the plan**
-   - Execute the PRP
-   - Implement all the code
+3. **計画の実行**
+   - PRPを実行する
+   - すべてのコードを実装する
 
-4. **Validate**
-   - Run each validation command
-   - Fix any failures
-   - Re-run until all pass
+4. **検証**
+   - 各検証コマンドを実行する
+   - 失敗があれば修正する
+   - すべてが通るまで再実行する
 
-5. **Complete**
-   - Ensure all checklist items done
-   - Run final validation suite
-   - Report completion status
-   - Read the PRP again to ensure you have implemented everything
+5. **完了**
+   - すべてのチェックリスト項目が完了していることを確認する
+   - 最終検証スイートを実行する
+   - 完了状況を報告する
+   - すべてを実装したことを確認するためにPRPを再度読み取る
 
-6. **Reference the PRP**
-   - You can always reference the PRP again if needed
+6. **PRPの参照**
+   - 必要に応じてPRPを再度参照できる
 
-Note: If validation fails, use error patterns in PRP to fix and retry.
+注意: 検証が失敗した場合、PRP内のエラーパターンを使用して修正し、再試行してください。

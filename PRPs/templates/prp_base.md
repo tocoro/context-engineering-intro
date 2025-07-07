@@ -1,88 +1,88 @@
 name: "Base PRP Template v2 - Context-Rich with Validation Loops"
 description: |
 
-## Purpose
-Template optimized for AI agents to implement features with sufficient context and self-validation capabilities to achieve working code through iterative refinement.
+## 目的
+AIエージェントが十分なコンテキストと自己検証機能で機能を実装し、反復的な改善を通じて動作するコードを達成するために最適化されたテンプレート。
 
-## Core Principles
-1. **Context is King**: Include ALL necessary documentation, examples, and caveats
-2. **Validation Loops**: Provide executable tests/lints the AI can run and fix
-3. **Information Dense**: Use keywords and patterns from the codebase
-4. **Progressive Success**: Start simple, validate, then enhance
-5. **Global rules**: Be sure to follow all rules in CLAUDE.md
+## 核となる原則
+1. **コンテキストが王**: 必要なすべてのドキュメント、例、注意点を含める
+2. **検証ループ**: AIが実行して修正できる実行可能なテスト/リントを提供
+3. **情報密度**: コードベースからのキーワードとパターンを使用
+4. **段階的成功**: シンプルに開始し、検証し、その後強化
+5. **グローバルルール**: CLAUDE.mdのすべてのルールに従うことを必ず確認
 
 ---
 
-## Goal
-[What needs to be built - be specific about the end state and desires]
+## 目標
+[構築する必要があるもの - 最終状態と希望について具体的に]
 
-## Why
-- [Business value and user impact]
-- [Integration with existing features]
-- [Problems this solves and for whom]
+## 理由
+- [ビジネス価値とユーザーへの影響]
+- [既存機能との統合]
+- [これが解決する問題と対象者]
 
-## What
-[User-visible behavior and technical requirements]
+## 何を
+[ユーザーが見える動作と技術要件]
 
-### Success Criteria
-- [ ] [Specific measurable outcomes]
+### 成功基準
+- [ ] [具体的で測定可能な結果]
 
-## All Needed Context
+## 必要なすべてのコンテキスト
 
-### Documentation & References (list all context needed to implement the feature)
+### ドキュメントと参照（機能を実装するために必要なすべてのコンテキストをリストアップ）
 ```yaml
-# MUST READ - Include these in your context window
-- url: [Official API docs URL]
-  why: [Specific sections/methods you'll need]
+# 必ず読む - これらをコンテキストウィンドウに含める
+- url: [公式APIドキュメントURL]
+  why: [必要な特定のセクション/メソッド]
   
 - file: [path/to/example.py]
-  why: [Pattern to follow, gotchas to avoid]
+  why: [従うべきパターン、避けるべき落とし穴]
   
-- doc: [Library documentation URL] 
-  section: [Specific section about common pitfalls]
-  critical: [Key insight that prevents common errors]
+- doc: [ライブラリドキュメントURL] 
+  section: [一般的な落とし穴に関する特定のセクション]
+  critical: [一般的なエラーを防ぐ重要な洞察]
 
 - docfile: [PRPs/ai_docs/file.md]
-  why: [docs that the user has pasted in to the project]
+  why: [ユーザーがプロジェクトに貼り付けたドキュメント]
 
 ```
 
-### Current Codebase tree (run `tree` in the root of the project) to get an overview of the codebase
+### 現在のコードベースツリー（プロジェクトのルートで`tree`を実行）してコードベースの概要を取得
 ```bash
 
 ```
 
-### Desired Codebase tree with files to be added and responsibility of file
+### 追加されるファイルとファイルの責任を含む希望するコードベースツリー
 ```bash
 
 ```
 
-### Known Gotchas of our codebase & Library Quirks
+### コードベースとライブラリの癖の既知の落とし穴
 ```python
-# CRITICAL: [Library name] requires [specific setup]
-# Example: FastAPI requires async functions for endpoints
-# Example: This ORM doesn't support batch inserts over 1000 records
-# Example: We use pydantic v2 and  
+# 重要: [ライブラリ名]は[特定のセットアップ]を必要とする
+# 例: FastAPIはエンドポイントに非同期関数を必要とする
+# 例: このORMは1000レコードを超えるバッチ挿入をサポートしない
+# 例: 我々はpydantic v2を使用し、  
 ```
 
-## Implementation Blueprint
+## 実装青写真
 
-### Data models and structure
+### データモデルと構造
 
-Create the core data models, we ensure type safety and consistency.
+コアデータモデルを作成し、型安全性と一貫性を確保します。
 ```python
-Examples: 
- - orm models
- - pydantic models
- - pydantic schemas
- - pydantic validators
+例: 
+ - ormモデル
+ - pydanticモデル
+ - pydanticスキーマ
+ - pydanticバリデーター
 
 ```
 
-### list of tasks to be completed to fullfill the PRP in the order they should be completed
+### PRPを満たすために完了すべきタスクのリスト（完了すべき順序で）
 
 ```yaml
-Task 1:
+タスク1:
 MODIFY src/existing_module.py:
   - FIND pattern: "class OldImplementation"
   - INJECT after line containing "def __init__"
@@ -95,77 +95,77 @@ CREATE src/new_feature.py:
 
 ...(...)
 
-Task N:
+タスクN:
 ...
 
 ```
 
 
-### Per task pseudocode as needed added to each task
+### 各タスクに必要に応じて追加される疑似コード
 ```python
 
-# Task 1
-# Pseudocode with CRITICAL details dont write entire code
+# タスク1
+# 重要な詳細を含む疑似コード、完全なコードは書かない
 async def new_feature(param: str) -> Result:
-    # PATTERN: Always validate input first (see src/validators.py)
-    validated = validate_input(param)  # raises ValidationError
+    # パターン: 常に最初に入力を検証（src/validators.pyを参照）
+    validated = validate_input(param)  # ValidationErrorを発生させる
     
-    # GOTCHA: This library requires connection pooling
-    async with get_connection() as conn:  # see src/db/pool.py
-        # PATTERN: Use existing retry decorator
+    # 落とし穴: このライブラリは接続プールを必要とする
+    async with get_connection() as conn:  # src/db/pool.pyを参照
+        # パターン: 既存のリトライデコレーターを使用
         @retry(attempts=3, backoff=exponential)
         async def _inner():
-            # CRITICAL: API returns 429 if >10 req/sec
+            # 重要: APIは10 req/secを超えると429を返す
             await rate_limiter.acquire()
             return await external_api.call(validated)
         
         result = await _inner()
     
-    # PATTERN: Standardized response format
-    return format_response(result)  # see src/utils/responses.py
+    # パターン: 標準化されたレスポンス形式
+    return format_response(result)  # src/utils/responses.pyを参照
 ```
 
-### Integration Points
+### 統合ポイント
 ```yaml
-DATABASE:
-  - migration: "Add column 'feature_enabled' to users table"
+データベース:
+  - migration: "usersテーブルに'feature_enabled'カラムを追加"
   - index: "CREATE INDEX idx_feature_lookup ON users(feature_id)"
   
-CONFIG:
+設定:
   - add to: config/settings.py
   - pattern: "FEATURE_TIMEOUT = int(os.getenv('FEATURE_TIMEOUT', '30'))"
   
-ROUTES:
+ルート:
   - add to: src/api/routes.py  
   - pattern: "router.include_router(feature_router, prefix='/feature')"
 ```
 
-## Validation Loop
+## 検証ループ
 
-### Level 1: Syntax & Style
+### レベル1: 構文とスタイル
 ```bash
-# Run these FIRST - fix any errors before proceeding
-ruff check src/new_feature.py --fix  # Auto-fix what's possible
-mypy src/new_feature.py              # Type checking
+# これらを最初に実行 - 続行前にエラーを修正
+ruff check src/new_feature.py --fix  # 可能なものを自動修正
+mypy src/new_feature.py              # 型チェック
 
-# Expected: No errors. If errors, READ the error and fix.
+# 期待: エラーなし。エラーがある場合、エラーを読み取って修正。
 ```
 
-### Level 2: Unit Tests each new feature/file/function use existing test patterns
+### レベル2: 各新機能/ファイル/関数のユニットテスト（既存のテストパターンを使用）
 ```python
-# CREATE test_new_feature.py with these test cases:
+# これらのテストケースでtest_new_feature.pyを作成:
 def test_happy_path():
-    """Basic functionality works"""
+    """基本的な機能が動作する"""
     result = new_feature("valid_input")
     assert result.status == "success"
 
 def test_validation_error():
-    """Invalid input raises ValidationError"""
+    """無効な入力はValidationErrorを発生させる"""
     with pytest.raises(ValidationError):
         new_feature("")
 
 def test_external_api_timeout():
-    """Handles timeouts gracefully"""
+    """タイムアウトを適切に処理する"""
     with mock.patch('external_api.call', side_effect=TimeoutError):
         result = new_feature("valid")
         assert result.status == "error"
@@ -173,40 +173,40 @@ def test_external_api_timeout():
 ```
 
 ```bash
-# Run and iterate until passing:
+# 合格するまで実行して反復:
 uv run pytest test_new_feature.py -v
-# If failing: Read error, understand root cause, fix code, re-run (never mock to pass)
+# 失敗する場合: エラーを読み取り、根本原因を理解し、コードを修正し、再実行（合格するためにモックしない）
 ```
 
-### Level 3: Integration Test
+### レベル3: 統合テスト
 ```bash
-# Start the service
+# サービスを開始
 uv run python -m src.main --dev
 
-# Test the endpoint
+# エンドポイントをテスト
 curl -X POST http://localhost:8000/feature \
   -H "Content-Type: application/json" \
   -d '{"param": "test_value"}'
 
-# Expected: {"status": "success", "data": {...}}
-# If error: Check logs at logs/app.log for stack trace
+# 期待: {"status": "success", "data": {...}}
+# エラーの場合: logs/app.logでスタックトレースを確認
 ```
 
-## Final validation Checklist
-- [ ] All tests pass: `uv run pytest tests/ -v`
-- [ ] No linting errors: `uv run ruff check src/`
-- [ ] No type errors: `uv run mypy src/`
-- [ ] Manual test successful: [specific curl/command]
-- [ ] Error cases handled gracefully
-- [ ] Logs are informative but not verbose
-- [ ] Documentation updated if needed
+## 最終検証チェックリスト
+- [ ] すべてのテストが合格: `uv run pytest tests/ -v`
+- [ ] リンティングエラーなし: `uv run ruff check src/`
+- [ ] 型エラーなし: `uv run mypy src/`
+- [ ] 手動テスト成功: [特定のcurl/コマンド]
+- [ ] エラーケースが適切に処理される
+- [ ] ログは有益だが冗長ではない
+- [ ] 必要に応じてドキュメントが更新される
 
 ---
 
-## Anti-Patterns to Avoid
-- ❌ Don't create new patterns when existing ones work
-- ❌ Don't skip validation because "it should work"  
-- ❌ Don't ignore failing tests - fix them
-- ❌ Don't use sync functions in async context
-- ❌ Don't hardcode values that should be config
-- ❌ Don't catch all exceptions - be specific
+## 避けるべきアンチパターン
+- ❌ 既存のものが機能する場合に新しいパターンを作成しない
+- ❌ 「動作するはず」だからといって検証をスキップしない  
+- ❌ 失敗するテストを無視しない - 修正する
+- ❌ 非同期コンテキストで同期関数を使用しない
+- ❌ 設定すべき値をハードコードしない
+- ❌ すべての例外をキャッチしない - 具体的に

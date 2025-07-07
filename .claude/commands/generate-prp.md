@@ -1,69 +1,69 @@
-# Create PRP
+# PRPを作成
 
-## Feature file: $ARGUMENTS
+## 機能ファイル: $ARGUMENTS
 
-Generate a complete PRP for general feature implementation with thorough research. Ensure context is passed to the AI agent to enable self-validation and iterative refinement. Read the feature file first to understand what needs to be created, how the examples provided help, and any other considerations.
+包括的なリサーチを伴う一般的な機能実装のための完全なPRPを生成。AIエージェントにコンテキストが渡され、自己検証と反復的な改善が可能になることを確保。まず機能ファイルを読み取り、何を作成する必要があるか、提供された例がどのように役立つか、その他の考慮事項を理解してください。
 
-The AI agent only gets the context you are appending to the PRP and training data. Assuma the AI agent has access to the codebase and the same knowledge cutoff as you, so its important that your research findings are included or referenced in the PRP. The Agent has Websearch capabilities, so pass urls to documentation and examples.
+AIエージェントは、PRPに追加するコンテキストとトレーニングデータのみを取得します。AIエージェントはコードベースとあなたと同じ知識カットオフにアクセスできると仮定するので、リサーチ結果をPRPに含めるか参照することが重要です。エージェントはWeb検索機能を持っているので、ドキュメントと例へのURLを渡してください。
 
-## Research Process
+## リサーチプロセス
 
-1. **Codebase Analysis**
-   - Search for similar features/patterns in the codebase
-   - Identify files to reference in PRP
-   - Note existing conventions to follow
-   - Check test patterns for validation approach
+1. **コードベース分析**
+   - コードベースで類似の機能/パターンを検索
+   - PRPで参照するファイルを特定
+   - 従うべき既存の慣例を記録
+   - 検証アプローチのテストパターンを確認
 
-2. **External Research**
-   - Search for similar features/patterns online
-   - Library documentation (include specific URLs)
-   - Implementation examples (GitHub/StackOverflow/blogs)
-   - Best practices and common pitfalls
+2. **外部リサーチ**
+   - オンラインで類似の機能/パターンを検索
+   - ライブラリドキュメント（特定のURLを含める）
+   - 実装例（GitHub/StackOverflow/ブログ）
+   - ベストプラクティスと一般的な落とし穴
 
-3. **User Clarification** (if needed)
-   - Specific patterns to mirror and where to find them?
-   - Integration requirements and where to find them?
+3. **ユーザー明確化**（必要に応じて）
+   - 模倣すべき特定のパターンとそれらを見つける場所？
+   - 統合要件とそれらを見つける場所？
 
-## PRP Generation
+## PRP生成
 
-Using PRPs/templates/prp_base.md as template:
+PRPs/templates/prp_base.mdをテンプレートとして使用：
 
-### Critical Context to Include and pass to the AI agent as part of the PRP
-- **Documentation**: URLs with specific sections
-- **Code Examples**: Real snippets from codebase
-- **Gotchas**: Library quirks, version issues
-- **Patterns**: Existing approaches to follow
+### PRPの一部としてAIエージェントに含めて渡す重要なコンテキスト
+- **ドキュメント**: 特定のセクションを含むURL
+- **コード例**: コードベースからの実際のスニペット
+- **落とし穴**: ライブラリの癖、バージョン問題
+- **パターン**: 従うべき既存のアプローチ
 
-### Implementation Blueprint
-- Start with pseudocode showing approach
-- Reference real files for patterns
-- Include error handling strategy
-- list tasks to be completed to fullfill the PRP in the order they should be completed
+### 実装青写真
+- アプローチを示す疑似コードで開始
+- パターンのために実際のファイルを参照
+- エラーハンドリング戦略を含める
+- PRPを満たすために完了すべきタスクを完了すべき順序でリストアップ
 
-### Validation Gates (Must be Executable) eg for python
+### 検証ゲート（実行可能でなければならない）例：Python用
 ```bash
-# Syntax/Style
+# 構文/スタイル
 ruff check --fix && mypy .
 
-# Unit Tests
+# ユニットテスト
 uv run pytest tests/ -v
 
 ```
 
-*** CRITICAL AFTER YOU ARE DONE RESEARCHING AND EXPLORING THE CODEBASE BEFORE YOU START WRITING THE PRP ***
+*** PRPの作成を開始する前に、リサーチとコードベースの探索が完了した後の重要事項 ***
 
-*** ULTRATHINK ABOUT THE PRP AND PLAN YOUR APPROACH THEN START WRITING THE PRP ***
+*** PRPについて深く考え、アプローチを計画してからPRPの作成を開始してください ***
 
-## Output
-Save as: `PRPs/{feature-name}.md`
+## 出力
+保存先: `PRPs/{feature-name}.md`
 
-## Quality Checklist
-- [ ] All necessary context included
-- [ ] Validation gates are executable by AI
-- [ ] References existing patterns
-- [ ] Clear implementation path
-- [ ] Error handling documented
+## 品質チェックリスト
+- [ ] 必要なすべてのコンテキストが含まれている
+- [ ] 検証ゲートがAIによって実行可能
+- [ ] 既存のパターンを参照している
+- [ ] 明確な実装パス
+- [ ] エラーハンドリングが文書化されている
 
-Score the PRP on a scale of 1-10 (confidence level to succeed in one-pass implementation using claude codes)
+1-10のスケールでPRPをスコア（claude codesを使用したワンパス実装で成功する信頼度レベル）
 
-Remember: The goal is one-pass implementation success through comprehensive context.
+覚えておいてください：目標は包括的なコンテキストを通じたワンパス実装の成功です。

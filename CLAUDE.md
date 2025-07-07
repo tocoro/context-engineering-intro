@@ -1,59 +1,60 @@
-### 🔄 Project Awareness & Context
-- **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
-- **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
-- **Use consistent naming conventions, file structure, and architecture patterns** as described in `PLANNING.md`.
-- **Use venv_linux** (the virtual environment) whenever executing Python commands, including for unit tests.
+### 🔄 プロジェクト認識とコンテキスト
+- **新しい会話を開始する際は、必ず`PLANNING.md`を読み取り**、プロジェクトのアーキテクチャ、目標、スタイル、制約を理解してください。
+- **新しいタスクを開始する前に`TASK.md`を確認**してください。タスクがリストされていない場合は、簡単な説明と今日の日付を付けて追加してください。
+- **`PLANNING.md`で説明されている一貫した命名規則、ファイル構造、アーキテクチャパターンを使用**してください。
+- **Pythonコマンドを実行する際は、必ずvenv_linux**（仮想環境）を使用してください。ユニットテストも含みます。
 
-### 🧱 Code Structure & Modularity
-- **Never create a file longer than 500 lines of code.** If a file approaches this limit, refactor by splitting it into modules or helper files.
-- **Organize code into clearly separated modules**, grouped by feature or responsibility.
-  For agents this looks like:
-    - `agent.py` - Main agent definition and execution logic 
-    - `tools.py` - Tool functions used by the agent 
-    - `prompts.py` - System prompts
-- **Use clear, consistent imports** (prefer relative imports within packages).
-- **Use clear, consistent imports** (prefer relative imports within packages).
-- **Use python_dotenv and load_env()** for environment variables.
+### 🧱 コード構造とモジュール性
+- **コードが500行を超えるファイルは絶対に作成しないでください。**ファイルがこの制限に近づいた場合は、モジュールやヘルパーファイルに分割してリファクタリングしてください。
+- **コードを明確に分離されたモジュールに整理**し、機能や責任によってグループ化してください。
+  エージェントの場合、以下のようになります：
+    - `agent.py` - メインエージェント定義と実行ロジック
+    - `tools.py` - エージェントが使用するツール関数
+    - `prompts.py` - システムプロンプト
+- **明確で一貫したインポートを使用**してください（パッケージ内では相対インポートを優先）。
+- **明確で一貫したインポートを使用**してください（パッケージ内では相対インポートを優先）。
+- **環境変数にはpython_dotenvとload_env()を使用**してください。
 
-### 🧪 Testing & Reliability
-- **Always create Pytest unit tests for new features** (functions, classes, routes, etc).
-- **After updating any logic**, check whether existing unit tests need to be updated. If so, do it.
-- **Tests should live in a `/tests` folder** mirroring the main app structure.
-  - Include at least:
-    - 1 test for expected use
-    - 1 edge case
-    - 1 failure case
+### 🧪 テストと信頼性
+- **新機能（関数、クラス、ルートなど）には必ずPytestユニットテストを作成**してください。
+- **ロジックを更新した後は**、既存のユニットテストを更新する必要があるかどうかを確認してください。必要であれば、更新してください。
+- **テストは`/tests`フォルダに配置**し、メインアプリ構造を反映してください。
+  - 少なくとも以下を含めてください：
+    - 期待される使用の1つのテスト
+    - 1つのエッジケース
+    - 1つの失敗ケース
 
-### ✅ Task Completion
-- **Mark completed tasks in `TASK.md`** immediately after finishing them.
-- Add new sub-tasks or TODOs discovered during development to `TASK.md` under a “Discovered During Work” section.
+### ✅ タスク完了
+- **タスクを完了したら、すぐに`TASK.md`で完了としてマーク**してください。
+- 開発中に発見された新しいサブタスクやTODOを「作業中に発見」セクションの下の`TASK.md`に追加してください。
 
-### 📎 Style & Conventions
-- **Use Python** as the primary language.
-- **Follow PEP8**, use type hints, and format with `black`.
-- **Use `pydantic` for data validation**.
-- Use `FastAPI` for APIs and `SQLAlchemy` or `SQLModel` for ORM if applicable.
-- Write **docstrings for every function** using the Google style:
+### 📎 スタイルと慣例
+- **主要言語としてPythonを使用**してください。
+- **PEP8に従い**、型ヒントを使用し、`black`でフォーマットしてください。
+- **データ検証には`pydantic`を使用**してください。
+- 該当する場合は、APIには`FastAPI`、ORMには`SQLAlchemy`または`SQLModel`を使用してください。
+- **すべての関数にGoogleスタイルのドキュメント文字列を記述**してください：
   ```python
   def example():
       """
-      Brief summary.
+      簡単な要約。
 
       Args:
-          param1 (type): Description.
+          param1 (type): 説明。
 
       Returns:
-          type: Description.
+          type: 説明。
       """
   ```
 
-### 📚 Documentation & Explainability
-- **Update `README.md`** when new features are added, dependencies change, or setup steps are modified.
-- **Comment non-obvious code** and ensure everything is understandable to a mid-level developer.
-- When writing complex logic, **add an inline `# Reason:` comment** explaining the why, not just the what.
+### 📚 ドキュメントと説明可能性
+- **新機能が追加されたり、依存関係が変更されたり、セットアップ手順が変更されたりした場合は`README.md`を更新**してください。
+- **自明でないコードにコメントを付け**、中級開発者が理解できるようにしてください。
+- 複雑なロジックを記述する際は、何をではなくなぜかを説明するインライン`# 理由:`コメントを追加してください。
 
-### 🧠 AI Behavior Rules
-- **Never assume missing context. Ask questions if uncertain.**
-- **Never hallucinate libraries or functions** – only use known, verified Python packages.
-- **Always confirm file paths and module names** exist before referencing them in code or tests.
-- **Never delete or overwrite existing code** unless explicitly instructed to or if part of a task from `TASK.md`.
+### 🧠 AI行動ルール
+- **応答は日本語で行い、思考プロセスも可能な限り日本語で記述してください。**
+- **不足しているコンテキストを仮定しないでください。不確実な場合は質問してください。**
+- **ライブラリや関数を妄想しないでください** – 既知の、検証済みのPythonパッケージのみを使用してください。
+- **コードやテストで参照する前に、ファイルパスとモジュール名が存在することを必ず確認**してください。
+- **明示的に指示されない限り、または`TASK.md`のタスクの一部でない限り、既存のコードを削除または上書きしないでください。**

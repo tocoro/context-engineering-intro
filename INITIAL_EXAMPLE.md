@@ -1,26 +1,26 @@
-## FEATURE:
+## 機能:
 
-- Pydantic AI agent that has another Pydantic AI agent as a tool.
-- Research Agent for the primary agent and then an email draft Agent for the subagent.
-- CLI to interact with the agent.
-- Gmail for the email draft agent, Brave API for the research agent.
+- ツールとして別のPydantic AIエージェントを持つPydantic AIエージェント。
+- プライマリエージェント用のリサーチエージェントと、サブエージェント用のメールドラフトエージェント。
+- エージェントと対話するためのCLI。
+- メールドラフトエージェント用のGmail、リサーチエージェント用のBrave API。
 
-## EXAMPLES:
+## 例:
 
-In the `examples/` folder, there is a README for you to read to understand what the example is all about and also how to structure your own README when you create documentation for the above feature.
+`examples/`フォルダには、上記の機能について理解し、独自のドキュメントを作成する際のREADMEの構造方法を理解するためのREADMEがあります。
 
-- `examples/cli.py` - use this as a template to create the CLI
-- `examples/agent/` - read through all of the files here to understand best practices for creating Pydantic AI agents that support different providers and LLMs, handling agent dependencies, and adding tools to the agent.
+- `examples/cli.py` - CLIを作成するためのテンプレートとして使用
+- `examples/agent/` - ここにあるすべてのファイルを読んで、異なるプロバイダーとLLMをサポートするPydantic AIエージェントの作成、エージェント依存関係の処理、エージェントへのツール追加のベストプラクティスを理解してください。
 
-Don't copy any of these examples directly, it is for a different project entirely. But use this as inspiration and for best practices.
+これらの例を直接コピーしないでください。これは完全に異なるプロジェクト用です。しかし、インスピレーションとベストプラクティスとして使用してください。
 
-## DOCUMENTATION:
+## ドキュメント:
 
-Pydantic AI documentation: https://ai.pydantic.dev/
+Pydantic AIドキュメント: https://ai.pydantic.dev/
 
-## OTHER CONSIDERATIONS:
+## その他の考慮事項:
 
-- Include a .env.example, README with instructions for setup including how to configure Gmail and Brave.
-- Include the project structure in the README.
-- Virtual environment has already been set up with the necessary dependencies.
-- Use python_dotenv and load_env() for environment variables
+- GmailとBraveの設定方法を含むセットアップ手順のREADMEと.env.exampleを含めてください。
+- READMEにプロジェクト構造を含めてください。
+- 仮想環境は既に必要な依存関係でセットアップされています。
+- 環境変数にはpython_dotenvとload_env()を使用してください
