@@ -8,8 +8,8 @@ AIコーディングアシスタントが最初から最後まで作業を完了
 
 ```bash
 # 1. このテンプレートをクローン
-git clone https://github.com/coleam00/Context-Engineering-Intro.git
-cd Context-Engineering-Intro
+git clone https://github.com/coleam00/Context-Engineering-jp.git
+cd Context-Engineering-jp
 
 # 2. プロジェクトルールを設定（オプション - テンプレート提供済み）
 # CLAUDE.mdを編集してプロジェクト固有のガイドラインを追加
